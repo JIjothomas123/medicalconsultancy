@@ -1,0 +1,38 @@
+	<!------------------View applied appointments----------------------->
+
+<?php include("patientbase.php");
+include("connection.php"); ?>
+<h1>Appointments</h1>
+<?php $result2=mysqli_query($conn,"SELECT * from doctorappointment") ?>
+<table class="">
+<th class="frm">NAME </th>
+<th class="frm">SPECIALISATION </th>
+<th class="frm">DATE </th>
+<th class="frm">FROM TIME</th>
+<th class="frm">TO TIME</th>
+
+
+
+<?php while($row2=mysqli_fetch_assoc($result2))
+        {?>
+       
+                   <tr>
+                   <td class="frm"><?php echo $row2["name"] ?></td>
+                   <td class="frm"><?php echo $row2["specialisation"] ?></td>
+                    <td  class="frm"><?php echo $row2["date"] ?></td>
+                    <td class="frm"><?php echo $row2["fromtime"] ?></td>
+                    <td class="frm"><?php echo $row2["totime"] ?></td>
+                 
+                  
+
+                     
+                  </tr>
+                    
+                
+                
+
+                  <?php }
+                  ?>		
+            </table>
+       
+
